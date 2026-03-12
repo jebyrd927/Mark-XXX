@@ -6,9 +6,9 @@ import sys
 import traceback
 from pathlib import Path
 
-import pyaudio
+import pyaudio # type: ignore
 from google import genai
-from google.genai import types
+from google.genai import types # type: ignore
 import time 
 from ui import JarvisUI
 from memory.memory_manager import load_memory, update_memory, format_memory_for_prompt
@@ -97,7 +97,7 @@ def _update_memory_async(user_text: str, jarvis_text: str) -> None:
     _last_memory_input = text
 
     try:
-        import google.generativeai as genai
+        import google.generativeai as genai # type: ignore
         genai.configure(api_key=_get_api_key())
         model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
